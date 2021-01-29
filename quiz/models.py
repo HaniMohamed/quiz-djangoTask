@@ -6,10 +6,16 @@ from django.db import models
 class Choice(models.Model):
     text = models.CharField(max_length=100)
 
+    def __str__(self):
+        return self.text
+
 
 class Question(models.Model):
     text = models.TextField()
     choices = models.ManyToManyField(Choice, related_name="questions")
+
+    def __str__(self):
+        return self.text
 
 
 class Answer(models.Model):
