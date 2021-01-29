@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
     # local libraries
     'quiz.apps.QuizConfig',
+    'api.apps.ApiConfig',
 ]
 
 MIDDLEWARE = [
