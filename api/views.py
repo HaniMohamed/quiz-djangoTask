@@ -1,3 +1,4 @@
+from django.db.models.functions import TruncDate
 from rest_framework import generics
 from .permissions import IsAdminNotSuperuser
 
@@ -16,3 +17,4 @@ class QuestionAPIView(generics.ListAPIView):
     permission_classes = [IsAdminNotSuperuser]
     queryset = Question.objects.all()
     serializer_class = QuestionSerializer
+

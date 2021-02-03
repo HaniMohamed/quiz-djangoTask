@@ -24,3 +24,6 @@ class Answer(models.Model):
         Question, on_delete=models.CASCADE, related_name="answers")
     choice = models.ForeignKey(
         Choice, on_delete=models.CASCADE, related_name="answers")
+
+    def __str__(self):
+        return str(self.question) + " => " + str(self.choice)

@@ -13,11 +13,11 @@ class AnswerSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Answer
-        fields = ('created', 'id', 'choice')
+        fields = ('created', 'id', 'choice',)
 
 
 class QuestionSerializer(serializers.ModelSerializer):
-    answers = AnswerSerializer(many=True, read_only=True)
+    answers = AnswerSerializer(many=True, read_only=True, )
     answers_count = serializers.IntegerField(
         source='answers.count',
         read_only=True
@@ -26,3 +26,4 @@ class QuestionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Question
         fields = ('text', 'answers_count', 'answers',)
+
