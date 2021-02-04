@@ -9,6 +9,7 @@ A quiz app using django framework.
 - clone the project using [git](https://git-scm.com/downloads)
 - [`cd`](https://linuxize.com/post/linux-cd-command/) into the project
 - run `docker-compose up --build` to run the db and project container (and leave it running)
+- run `docker-compose exec web python manage.py migrate` to apply migrations (only for the first run).
 - Visit the project on this URL: [localhost:8000/api/v1/](http://localhost:8000/api/v1/)
 
 ## Seeding database
