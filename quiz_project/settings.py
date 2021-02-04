@@ -40,7 +40,7 @@ INSTALLED_APPS = [
 
     # 3rd party libraries
     'rest_framework',
-    
+
     # local libraries
     'quiz.apps.QuizConfig',
     'api.apps.ApiConfig',
@@ -133,5 +133,6 @@ STATIC_URL = '/static/'
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
-    ]
+    ],
+
 }

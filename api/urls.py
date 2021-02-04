@@ -1,7 +1,7 @@
 from django.urls import path
 
-from .views import QuestionAPIView
+from .views import AnswerAPIView
 
 urlpatterns = [
-    path('', QuestionAPIView.as_view()),
+    path('', AnswerAPIView.as_view()),
 ]
