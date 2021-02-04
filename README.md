@@ -10,7 +10,7 @@ A quiz app using django framework.
 - [`cd`](https://linuxize.com/post/linux-cd-command/) into the project
 - apply the migrations by issueing `python ./manage.py migrate`
 - run `docker-compose up --build` to run the db container (and leave it running)
-- Visit the project on this URL: [localhost:8000](http://localhost:8000)
+- Visit the project on this URL: [localhost:8000/api/v1/](http://localhost:8000/api/v1/)
 
 ## Seeding database
 to generate dummy data using package called "django-seed"
