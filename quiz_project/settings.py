@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     # 3rd party libraries
     'rest_framework',
+    'django_seed',
 
     # local libraries
     'quiz.apps.QuizConfig',
