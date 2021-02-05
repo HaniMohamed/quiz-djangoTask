@@ -1,8 +1,6 @@
-from datetime import datetime
-
 from rest_framework import serializers
 
-from quiz.models import Answer, Question, Choice
+from quiz.models import Answer, Question
 
 
 class AnswerSerializer(serializers.ModelSerializer):
@@ -26,6 +24,7 @@ class QuestionSerializer(serializers.ModelSerializer):
 
 class AnswerQuizSerializer(serializers.ModelSerializer):
     question = QuestionSerializer()
+
     # questions_count = serializers.IntegerField(
     #     source='questions.count',
     #     read_only=True
@@ -33,5 +32,4 @@ class AnswerQuizSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Answer
-        fields = ('created','question',)
-
+        fields = ('created', 'question',)
