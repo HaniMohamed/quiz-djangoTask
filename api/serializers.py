@@ -25,11 +25,28 @@ class QuestionSerializer(serializers.ModelSerializer):
 class AnswerQuizSerializer(serializers.ModelSerializer):
     question = QuestionSerializer()
 
-    # questions_count = serializers.IntegerField(
-    #     source='questions.count',
-    #     read_only=True
-    # )
-
     class Meta:
         model = Answer
-        fields = ('created', 'question',)
+        fields = ('question', )
+
+
+class AnswerLogSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Answer
+        fields = ['created', 'questions_count', 'answers', ]
+
+    answers = serializers.SerializerMethodField('get_answer')
+    questions_count = serializers.SerializerMethodField()
+
+
+
+    @staticmethod
+    def get_answer(obj):
+        answers = Answer.objects.filter(created=obj.created)
+        answer_serializer = AnswerQuizSerializer(answers, many=True)
+        return answer_serializer.data,
+
+
+
+    def get_questions_count(self, obj):
+        return Answer.objects.filter(created=obj.created).count()

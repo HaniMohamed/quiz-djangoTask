@@ -1,7 +1,7 @@
 from django.urls import path
 
-from .views import AnswerAPIView
+from .views import AnswerGroupedDate
 
 urlpatterns = [
-    path('', AnswerAPIView.as_view()),
+    path('', AnswerGroupedDate.as_view()),
 ]
