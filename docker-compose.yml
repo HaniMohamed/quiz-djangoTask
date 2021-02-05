@@ -4,7 +4,7 @@ services:
   db:
     image: postgres
     environment:
-      - POSTGRES_DB=quize
+      - POSTGRES_DB=quiz
       - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=admin123
   web:
